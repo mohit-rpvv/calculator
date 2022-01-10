@@ -2,8 +2,183 @@
 <html>
     <head>
         <title>My Calculator redmi8</title>
-        <link rel="stylesheet" src="./style.css">
+
     </head>
+    <style>
+        body {
+
+margin:0;
+
+padding:0;
+
+    background-color:white;
+
+    
+
+    }
+
+    .container{
+
+        position: absolute;
+
+        left: 50%;
+
+        top: 50%;
+
+        border:4px black solid;
+
+        transform: translate(-50%, -50%);
+
+        background-color:pink;
+
+        overflow:hidden;
+
+        height:70vh;
+
+        width:70vw;
+
+    }
+
+    .AllButtons{
+
+        height:49vh;
+
+        width:70vw; 
+
+        background-color:white;  
+
+    }
+
+    
+
+    td{
+
+        width:25%;
+
+    }
+
+    
+
+    .buttons {
+
+        background-color:white;
+
+        border-style:none;
+
+        border-radius:50% 50% ;
+
+        font-size:30px;
+
+        text-align:center ;
+
+        height:100%;
+
+        width:100%;
+
+    }
+
+    
+
+    .buttons:active{
+
+        background-color:#e7e8e1;
+
+        
+
+    }
+
+    
+
+    .buttons:focus{
+
+        outline:none;
+
+    }
+
+    
+
+    .equals{
+
+        background-color:#fa7b4d;
+
+        color:white;
+
+    }
+
+    
+
+    .equals:active{
+
+        color:#fa7b4d;
+
+        background-color:white;
+
+        
+
+    }
+
+    
+
+    .operators{
+
+        color:#fa7b4d;
+
+    }
+
+    
+
+    input[type=textview]{
+
+        text-align:right;
+
+        font-size:30px;
+
+        line-height:10vh;
+
+        width:70vw;
+
+    }
+
+    
+
+    .output1{
+
+        
+
+        border:none;
+
+        border-bottom:2px solid black;
+
+    }
+
+    
+
+    .output2{
+
+        border:none;
+
+    }
+
+    .output2:focus{
+
+        outline:none;
+
+    }
+
+    
+
+    .output1:focus{
+
+        outline:none;
+
+    }
+
+    .minus {
+
+        font-size:50px;
+
+    }
+    </style>
     <body>
     <div class="container">
     <div>
@@ -51,5 +226,201 @@
         </table>
       </div>
     </body>
-    <script src="./script.js"></script>
+    <script >
+           
+
+function insert(num)
+
+{
+
+    var inp = document.form1.output1;
+
+    inp.value += num;
+
+}
+
+function clearall()
+
+{
+
+    var inp = document.form1.output1;
+
+    var out = document.form2.output2;
+
+    inp.value = '';
+
+    out.value ='';
+
+}
+
+function evaluation()
+
+{
+
+    var inp = document.form1.output1;
+
+    var out = document.form2.output2;
+
+    if(inp.value != "")
+
+    {
+
+    out.value = inp.value;
+
+    inp.value =  eval(inp.value);
+
+    }
+
+}
+
+function percentage()
+
+{
+
+    var inp = document.form1.output1
+
+    inp.value = eval(inp.value)/100.0;
+
+    insert('*');
+
+}
+
+function backspace()
+
+{
+
+    var exp = document.form1.output1.value;
+
+    document.form1.output1.value = exp.substring(0,exp.length-1);
+
+}
+
+window.onload = function() {
+
+
+
+//create canvas and append it
+
+const canvas = document.createElement("canvas");
+
+document.body.appendChild(canvas);
+
+const context = canvas.getContext('2d');
+
+const wh = window.innerHeight;
+
+const ww = window.innerWidth;
+
+canvas.width = ww;
+
+canvas.height= wh;
+
+
+
+
+
+// variables for parameters for arc
+
+let rh =0;
+
+let rw = 0;
+
+let rx=0;
+
+let ry=0;
+
+let xcord = 0;
+
+let ycord = 0;
+
+let radius = 0;
+
+const startAngle = 0;
+
+const endAngle = Math.PI * 2;//360
+
+const iscounterclock = false;//default condition
+
+
+
+
+
+//random positions and drawing
+
+
+
+function randomDrawCircle() {
+
+    context.beginPath();
+
+    xcord = Math.random()*ww; 
+
+    ycord = Math.random()*wh;
+
+    radius = Math.random()*25;
+
+    //main lines
+
+    context.arc(xcord,ycord,radius,startAngle,endAngle,iscounterclock);
+
+    context.lineWidth = Math.random()*10;
+
+    context.fillStyle = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+    
+
+    context.fill();
+
+    context.strokeStyle=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+    context.stroke();
+
+
+
+}
+
+function randomDrawRectangle(){
+
+    context.beginPath();
+
+    rh = Math.random()*80;
+
+    rw = Math.random()*80;
+
+    rx = Math.random()*ww;
+
+    ry = Math.random()*wh;
+
+    context.rect(rx,ry,rh,rw);
+
+    context.lineWidth = Math.random()*10;
+
+    context.fillStyle = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+    context.fill();
+
+    context.strokeStyle=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+    context.stroke();
+
+}
+
+
+
+randomDrawCircle(); //calling one time
+
+randomDrawRectangle();
+
+// now interval for calling again
+
+
+
+setInterval(randomDrawCircle,400)
+
+setInterval(randomDrawRectangle,300)
+
+
+
+}
+    </script>
 </html>

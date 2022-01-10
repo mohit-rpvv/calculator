@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Calculator redmi8</title>
+    </head>
+    <body>
+    <div class="container">
+    <div>
+            <form name="form2">
+                <input type="textview" name="output2" placeholder="" class="output2">
+            </form>
+        </div>
+        <div>
+            <form name="form1">
+                <input type="textview" name="output1" placeholder="0" class="output1" id ="op1">
+            </form>
+        </div>
+        
+        <table class="AllButtons">
+        <tr>
+                <td><button onclick="clearall()" class="buttons operators">c</button></td>
+                <td><button onclick="backspace()" class="buttons operators"><</button></td>
+                <td><button onclick="percentage()" class="buttons operators">%</button></td>
+                <td><button onclick="insert('/')" class="buttons operators">÷</button></td>
+            </tr>
+        <tr>
+                <td><button onclick="insert('7')" class="buttons">7</button></td>
+                <td><button onclick="insert('8')" class="buttons">8</button></td>
+                <td><button onclick="insert('9')" class="buttons">9</button></td>
+                <td><button onclick="insert('*')" class="buttons operators">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="insert('4')" class="buttons">4</button></td>
+                <td><button onclick="insert('5')" class="buttons">5</button></td>
+                <td><button onclick="insert('6')" class="buttons">6</button></td>
+                <td><button onclick="insert('-')" class="buttons operators minus">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="insert('1')" class="buttons">1</button></td>
+                <td><button onclick="insert('2')" class="buttons">2</button></td>
+                <td><button onclick="insert('3')" class="buttons">3</button></td>
+                <td><button onclick="insert('+')" class="buttons operators">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="buttons operators">#</button></td>
+                <td><button onclick="insert('0')" class="buttons">0</button></td>
+                <td><button onclick="insert('.')" class="buttons">.</button></td>
+                <td><button onclick="evaluation()" class="buttons equals">=</button></td>
+            </tr>
+        </table>
+      </div>
+    </body>
+</html>

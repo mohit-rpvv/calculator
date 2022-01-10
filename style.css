@@ -1,0 +1,173 @@
+body {
+
+margin:0;
+
+padding:0;
+
+    background-color:white;
+
+    
+
+    }
+
+    .container{
+
+        position: absolute;
+
+        left: 50%;
+
+        top: 50%;
+
+        border:4px black solid;
+
+        transform: translate(-50%, -50%);
+
+        background-color:pink;
+
+        overflow:hidden;
+
+        height:70vh;
+
+        width:70vw;
+
+    }
+
+    .AllButtons{
+
+        height:49vh;
+
+        width:70vw; 
+
+        background-color:white;  
+
+    }
+
+    
+
+    td{
+
+        width:25%;
+
+    }
+
+    
+
+    .buttons {
+
+        background-color:white;
+
+        border-style:none;
+
+        border-radius:50% 50% ;
+
+        font-size:30px;
+
+        text-align:center ;
+
+        height:100%;
+
+        width:100%;
+
+    }
+
+    
+
+    .buttons:active{
+
+        background-color:#e7e8e1;
+
+        
+
+    }
+
+    
+
+    .buttons:focus{
+
+        outline:none;
+
+    }
+
+    
+
+    .equals{
+
+        background-color:#fa7b4d;
+
+        color:white;
+
+    }
+
+    
+
+    .equals:active{
+
+        color:#fa7b4d;
+
+        background-color:white;
+
+        
+
+    }
+
+    
+
+    .operators{
+
+        color:#fa7b4d;
+
+    }
+
+    
+
+    input[type=textview]{
+
+        text-align:right;
+
+        font-size:30px;
+
+        line-height:10vh;
+
+        width:70vw;
+
+    }
+
+    
+
+    .output1{
+
+        
+
+        border:none;
+
+        border-bottom:2px solid black;
+
+    }
+
+    
+
+    .output2{
+
+        border:none;
+
+    }
+
+    .output2:focus{
+
+        outline:none;
+
+    }
+
+    
+
+    .output1:focus{
+
+        outline:none;
+
+    }
+
+    .minus {
+
+        font-size:50px;
+
+    }
